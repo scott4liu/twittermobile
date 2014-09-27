@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterMobile/TweetTableViewCell.swift"
+            timestampString = "433554313.793029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "TweetTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.tweetText.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.826595"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.tweetText.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.828128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(style : C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; TwitterMobile.TweetTableViewCell"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.828388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(frame : C.CGRect) -&gt; TwitterMobile.TweetTableViewCell"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.828554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "103">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)() -&gt; TwitterMobile.TweetTableViewCell"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.828709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(coder : ObjectiveC.NSCoder) -&gt; TwitterMobile.TweetTableViewCell"
+                  moduleName = "TwitterMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
+                  timestampString = "433554313.82887"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

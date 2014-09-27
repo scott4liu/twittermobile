@@ -16,10 +16,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tweetsTableView.rowHeight = UITableViewAutomaticDimension
        
         TwitterClient.sharedInstance.loadHomeTimeline(nil){ (tweets, error) -> () in
             if (tweets != nil) {
                 self.tweets = tweets
+                
+                println(tweets![0].dictionary)
                 self.tweetsTableView.reloadData()
             }
         }
