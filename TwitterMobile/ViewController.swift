@@ -8,32 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LoginCompleteHandler {
 
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var tweets: [Tweet]?
+
+    @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        TwitterClient.sharedInstance.login(self)
-        
+        TwitterClient.sharedInstance.loadHomeTimeline(nil){ (tweets, error) -> () in
+            if (tweets != nil) {
+                self.tweets = tweets
+                self.tweetsTableView.reloadData()
+            }
+        }
     }
 
-    func login_succeed() {
+    @IBAction func logout(sender: AnyObject) {
         
-        TwitterClient.sharedInstance.loadHomeTimeline()
+        TwitterClient.sharedInstance.logout()
         
-    }
-    func login_failed(error: NSError!) {
-        NSLog("Failed to login: \(error)")
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TwittTableViewCell") as TwittTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell") as TweetTableViewCell
+        
+        cell.tweetText.text = tweets?[indexPath.row].text
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        if (self.tweets != nil) {
+            return self.tweets!.count;
+        } else {
+            return 0
+        }
     }
+    
+    
     
 }
 

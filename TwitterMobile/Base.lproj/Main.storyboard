@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DMQ-P2-5yc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tWF-K3-Qpg">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TwittTableViewCell" rowHeight="81" id="f5J-85-qdu" customClass="TwittTableViewCell" customModule="TwitterMobile" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetTableViewCell" rowHeight="81" id="f5J-85-qdu" customClass="TweetTableViewCell" customModule="TwitterMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f5J-85-qdu" id="Sj5-dB-3LR">
@@ -37,6 +37,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="tweetText" destination="Ro2-uZ-sI4" id="IRw-HT-hOz"/>
                                             <segue destination="uQt-Ps-HrV" kind="push" identifier="HomeToTwitt" id="ct7-cV-AFD"/>
                                         </connections>
                                     </tableViewCell>
@@ -55,17 +56,26 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Hof-nE-UEX" secondAttribute="trailing" id="zUK-og-MJS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="aK3-fi-vtP"/>
+                    <navigationItem key="navigationItem" title="Home" id="aK3-fi-vtP">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="nAF-N4-dho">
+                            <connections>
+                                <action selector="logout:" destination="vXZ-lx-hvc" id="ol2-Jd-ZvE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tweetsTableView" destination="Hof-nE-UEX" id="r6L-Zz-HsC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="79"/>
+            <point key="canvasLocation" x="331" y="67"/>
         </scene>
-        <!--Twitt-->
+        <!--Tweet-->
         <scene sceneID="KHS-hd-yVn">
             <objects>
-                <viewController id="uQt-Ps-HrV" customClass="TwittViewController" customModule="TwitterMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tweet" id="uQt-Ps-HrV" customClass="TweetViewController" customModule="TwitterMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Je5-kS-BWh"/>
                         <viewControllerLayoutGuide type="bottom" id="hoL-2h-ZhX"/>
@@ -75,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Twitt" id="k5n-n4-1Ox">
+                    <navigationItem key="navigationItem" title="Tweet" id="k5n-n4-1Ox">
                         <barButtonItem key="rightBarButtonItem" title="Reply" id="KHc-P5-pTc">
                             <connections>
                                 <segue destination="Fyz-Vc-kWb" kind="show" identifier="TwittToReply" id="Nyt-7U-zKw"/>
@@ -88,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="542" y="79"/>
         </scene>
-        <!--New Twitt View Controller-->
+        <!--New Tweet View Controller-->
         <scene sceneID="9I3-Pz-AcM">
             <objects>
-                <viewController id="Fyz-Vc-kWb" customClass="NewTwittViewController" customModule="TwitterMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fyz-Vc-kWb" customClass="NewTweetViewController" customModule="TwitterMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yCt-Y5-5Xf"/>
                         <viewControllerLayoutGuide type="bottom" id="BrI-0v-fve"/>
@@ -112,7 +122,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ndo-j9-CFv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DMQ-P2-5yc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="DMQ-P2-5yc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mjw-b3-fv9">
@@ -127,6 +137,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmc-yI-h6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-242" y="79"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="v04-7x-cRG">
+            <objects>
+                <viewController id="tWF-K3-Qpg" customClass="LoginViewController" customModule="TwitterMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="npI-GN-uwp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jp0-mb-TyW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZ9-sZ-OZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhZ-bK-FTv">
+                                <rect key="frame" x="86" y="195" width="143" height="30"/>
+                                <state key="normal" title="Login To Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="tWF-K3-Qpg" eventType="touchUpInside" id="0Z8-0E-Xwp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="DMQ-P2-5yc" kind="presentation" identifier="LoginSeque" id="67J-mC-acg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrU-Gz-8EN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728" y="79"/>
         </scene>
     </scenes>
 </document>

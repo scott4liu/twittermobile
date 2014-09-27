@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwittViewController: UIViewController {
+class TweetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
