@@ -12,6 +12,7 @@ class TweetTableViewCell: UITableViewCell {
 
     var index: Int?
     
+    @IBOutlet weak var topSpaceConstraint: NSLayoutConstraint!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var reTweetBy: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
