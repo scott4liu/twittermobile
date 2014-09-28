@@ -12,18 +12,19 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
+    var prototypeCell: TweetTableViewCell?
 
     @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tweetsTableView.rowHeight = UITableViewAutomaticDimension
+        //tweetsTableView.rowHeight = UITableViewAutomaticDimension
        
         TwitterClient.sharedInstance.loadHomeTimeline(nil){ (tweets, error) -> () in
             if (tweets != nil) {
                 self.tweets = tweets
                 
-                println(tweets![0].dictionary)
+                //println(tweets![0].dictionary)
                 self.tweetsTableView.reloadData()
             }
         }
@@ -38,7 +39,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell") as TweetTableViewCell
         
-        cell.tweetText.text = tweets?[indexPath.row].text
+        if let tweet = tweets?[indexPath.row] {
+            cell.tweetText.text = tweet.text
+            
+            cell.nameLabel.text = tweet.user?.name
+            cell.screenName.text = "@" + tweet.user!.screenname!
+        
+            let layer = cell.avatarImageView.layer
+            layer.masksToBounds=true
+            layer.cornerRadius=8.0
+        
+            if let imageURL: String = tweets?[indexPath.row].user?.profileImageURL {
+            
+                cell.avatarImageView.setImageWithURL(NSURL(string: imageURL))
+            
+            }
+            
+            
+            cell.favoriteButton.setTitle(" "+String(tweet.favorite_count ?? 0), forState: .Normal)
+            cell.retweetButton.setTitle(" "+String(tweet.retweet_count ?? 0), forState: .Normal)
+        }
+
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.index = indexPath.row
         return cell
     }
     
@@ -50,7 +73,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        //1 line: 85
+        //2 lines:  97
+        //3 lines: 109
+        //4 lines: 121
+        var line: Int = 0
+        if let tweet = tweets?[indexPath.row] {
+            line = tweet.text_length/44
+        }
+        
+        return CGFloat(85+line*12);
+    }
     
+    @IBAction func likeTheTweet(sender: AnyObject) {
+        
+        let btn = sender as UIButton
+        if let cell = btn.superview?.superview?.superview as? TweetTableViewCell {
+            println(cell.index)
+        }
+    }
     
 }
 

@@ -59,7 +59,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         
         //step 1
         fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuthToken!) -> Void in
-            println("got request token: \(requestToken)")
+            //println("got request token: \(requestToken)")
             
             //step 2
             let authURL = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")

@@ -21,6 +21,13 @@
 		7A8C084D19D6980100E7FBC6 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C084C19D6980100E7FBC6 /* TweetTableViewCell.swift */; };
 		7A8C084F19D69B2A00E7FBC6 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C084E19D69B2A00E7FBC6 /* NewTweetViewController.swift */; };
 		7A8C085119D7101000E7FBC6 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C085019D7101000E7FBC6 /* Tweet.swift */; };
+		7AF47B7A19D7C886005E3BFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7319D7C886005E3BFE /* Default-568h@2x.png */; };
+		7AF47B7B19D7C886005E3BFE /* like_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7419D7C886005E3BFE /* like_off.png */; };
+		7AF47B7C19D7C886005E3BFE /* like_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7519D7C886005E3BFE /* like_on.png */; };
+		7AF47B7D19D7C886005E3BFE /* reply_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7619D7C886005E3BFE /* reply_off.png */; };
+		7AF47B7E19D7C886005E3BFE /* reply_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7719D7C886005E3BFE /* reply_on.png */; };
+		7AF47B7F19D7C886005E3BFE /* retweet_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7819D7C886005E3BFE /* retweet_off.png */; };
+		7AF47B8019D7C886005E3BFE /* retweet_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF47B7919D7C886005E3BFE /* retweet_on.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,13 @@
 		7A8C084C19D6980100E7FBC6 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		7A8C084E19D69B2A00E7FBC6 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTweetViewController.swift; path = TwitterMobile/NewTweetViewController.swift; sourceTree = "<group>"; };
 		7A8C085019D7101000E7FBC6 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		7AF47B7319D7C886005E3BFE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7AF47B7419D7C886005E3BFE /* like_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_off.png; sourceTree = "<group>"; };
+		7AF47B7519D7C886005E3BFE /* like_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_on.png; sourceTree = "<group>"; };
+		7AF47B7619D7C886005E3BFE /* reply_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply_off.png; sourceTree = "<group>"; };
+		7AF47B7719D7C886005E3BFE /* reply_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply_on.png; sourceTree = "<group>"; };
+		7AF47B7819D7C886005E3BFE /* retweet_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_off.png; sourceTree = "<group>"; };
+		7AF47B7919D7C886005E3BFE /* retweet_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_on.png; sourceTree = "<group>"; };
 		E775876704F05E1056ACE389 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +133,13 @@
 		7A8C081D19D6268500E7FBC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7AF47B7319D7C886005E3BFE /* Default-568h@2x.png */,
+				7AF47B7419D7C886005E3BFE /* like_off.png */,
+				7AF47B7519D7C886005E3BFE /* like_on.png */,
+				7AF47B7619D7C886005E3BFE /* reply_off.png */,
+				7AF47B7719D7C886005E3BFE /* reply_on.png */,
+				7AF47B7819D7C886005E3BFE /* retweet_off.png */,
+				7AF47B7919D7C886005E3BFE /* retweet_on.png */,
 				7A8C081E19D6268500E7FBC6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -275,9 +296,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF47B7B19D7C886005E3BFE /* like_off.png in Resources */,
 				7A8C082519D6268500E7FBC6 /* Main.storyboard in Resources */,
+				7AF47B7A19D7C886005E3BFE /* Default-568h@2x.png in Resources */,
+				7AF47B7D19D7C886005E3BFE /* reply_off.png in Resources */,
 				7A8C082A19D6268500E7FBC6 /* LaunchScreen.xib in Resources */,
 				7A8C082719D6268500E7FBC6 /* Images.xcassets in Resources */,
+				7AF47B7F19D7C886005E3BFE /* retweet_off.png in Resources */,
+				7AF47B7C19D7C886005E3BFE /* like_on.png in Resources */,
+				7AF47B7E19D7C886005E3BFE /* reply_on.png in Resources */,
+				7AF47B8019D7C886005E3BFE /* retweet_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

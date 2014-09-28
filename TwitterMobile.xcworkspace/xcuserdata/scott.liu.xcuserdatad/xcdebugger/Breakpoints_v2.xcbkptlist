@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwitterMobile/TweetTableViewCell.swift"
-            timestampString = "433554313.793029"
+            timestampString = "433580450.25552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "TweetTableViewCell"
             landmarkType = "3">
             <Locations>
@@ -25,7 +25,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.tweetText.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.826595"
+                  timestampString = "433569882.275626"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -39,7 +39,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.tweetText.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.828128"
+                  timestampString = "433569882.275873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -53,7 +53,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(style : C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; TwitterMobile.TweetTableViewCell"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.828388"
+                  timestampString = "433569882.2761"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -67,7 +67,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(frame : C.CGRect) -&gt; TwitterMobile.TweetTableViewCell"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.828554"
+                  timestampString = "433569882.276265"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -81,7 +81,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)() -&gt; TwitterMobile.TweetTableViewCell"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.828709"
+                  timestampString = "433569882.27642"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -95,7 +95,7 @@
                   symbolName = "TwitterMobile.TweetTableViewCell.init (TwitterMobile.TweetTableViewCell.Type)(coder : ObjectiveC.NSCoder) -&gt; TwitterMobile.TweetTableViewCell"
                   moduleName = "TwitterMobile"
                   urlString = "file:///Users/scott.liu/git/ios/TwitterMobile/TwitterMobile/TweetTableViewCell.swift"
-                  timestampString = "433554313.82887"
+                  timestampString = "433569882.276596"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -103,6 +103,38 @@
                   offsetFromSymbolStart = "84">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterMobile/ViewController.swift"
+            timestampString = "433574997.688348"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterMobile/ViewController.swift"
+            timestampString = "433580450.25552"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "tableView(_:heightForRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

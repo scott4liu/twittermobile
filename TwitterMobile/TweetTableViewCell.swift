@@ -10,12 +10,20 @@ import UIKit
 
 class TweetTableViewCell: UITableViewCell {
 
+    var index: Int?
     
-    @IBOutlet weak var reTweetLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tweetText: UILabel!
     
-    @IBOutlet weak var likesCount: UILabel!
+    @IBOutlet weak var screenName: UILabel!
+    
     @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBOutlet weak var favoriteButton: UIButton!
+
+    @IBOutlet weak var retweetButton: UIButton!
+    
+    @IBOutlet weak var replyButton: UIButton!
     
        override func awakeFromNib() {
         super.awakeFromNib()
