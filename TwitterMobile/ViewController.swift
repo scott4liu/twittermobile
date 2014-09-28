@@ -15,6 +15,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var prototypeCell: TweetTableViewCell?
     
     var refreshControl: UIRefreshControl!
+    
+    let image_favorite_on = UIImage(named: "like_on.png");
+    let image_favorite_off = UIImage(named: "like_off.png");
+    let image_retweet_on = UIImage(named: "retweet_on.png");
+    let image_retweet_off = UIImage(named: "retweet_off.png");
 
     @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
@@ -97,8 +102,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dispalyTweet(cell, tweet: tweet)
             }
             
-            cell.favoriteButton.setTitle(" "+String(tweet.favorite_count ?? 0), forState: .Normal)
-            cell.retweetButton.setTitle(" "+String(tweet.retweet_count ?? 0), forState: .Normal)
+            
+            showFavoriteBtn(cell, tweet:tweet)
+            
+            showRetweetBtn(cell, tweet:tweet)
             
             cell.timeLabel.text = tweet.timeIntervalAsStr
             
@@ -114,6 +121,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    func showRetweetBtn(cell: TweetTableViewCell, tweet: Tweet){
+        if (tweet.retweeted) {
+            cell.retweetButton.setImage(image_retweet_on, forState: .Normal)
+        } else {
+            cell.retweetButton.setImage(image_retweet_off, forState: .Normal)
+        }
+        
+        cell.retweetButton.setTitle(" "+String(tweet.retweet_count ?? 0), forState: .Normal)
+    }
+    
+    func showFavoriteBtn(cell: TweetTableViewCell, tweet: Tweet){
+        if (tweet.favorited) {
+            cell.favoriteButton.setImage(image_favorite_on, forState: .Normal)
+        } else {
+            cell.favoriteButton.setImage(image_favorite_off, forState: .Normal)
+        }
+        cell.favoriteButton.setTitle(" "+String(tweet.favorite_count ?? 0), forState: .Normal)
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.tweets != nil) {
@@ -142,7 +169,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let btn = sender as UIButton
         if let cell = btn.superview?.superview?.superview as? TweetTableViewCell {
-            println(cell.index)
+            
+            let tweet = self.tweets![cell.index!]
+            if !tweet.favorited {
+                tweet.favorite()
+                showFavoriteBtn(cell, tweet:tweet)
+            }
         }
     }
     

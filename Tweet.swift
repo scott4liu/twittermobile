@@ -84,10 +84,12 @@ class Tweet: NSObject {
     func reTweet()
     {
         self.retweeted = true
+        self.retweet_count++
         TwitterClient.sharedInstance.reTweet(self.id, complete: { (tweet, error) -> () in
             if error != nil {
                 NSLog("Failed to reTweet: \(error)")
                 self.retweeted = false
+                self.retweet_count--
             }
         })
     }
@@ -95,10 +97,12 @@ class Tweet: NSObject {
     func favorite()
     {
         self.favorited = true
+        self.favorite_count++
         TwitterClient.sharedInstance.favoriteTweet(self.id, complete: { (tweet, error) -> () in
             if error != nil {
                 NSLog("Failed to favorite tweet: \(error)")
                 self.favorited = false
+                self.favorite_count--
             }
         })
         
