@@ -75,15 +75,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         //1 line: 85
-        //2 lines:  97
+        //2 lines:  97 --105
         //3 lines: 109
         //4 lines: 121
         var line: Int = 0
         if let tweet = tweets?[indexPath.row] {
-            line = tweet.text_length/44
+            line = tweet.text_length/36
         }
         
-        return CGFloat(85+line*12);
+        return CGFloat(81+line*12);
     }
     
     @IBAction func likeTheTweet(sender: AnyObject) {
