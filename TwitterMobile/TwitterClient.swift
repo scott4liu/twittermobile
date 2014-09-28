@@ -117,6 +117,57 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
 
     }
     
+    func postTweet(status: String, in_reply_to_status_id: Int?, complete: (tweet: Tweet?, error: NSError? )->()  ) {
+        var parameters = ["status": status]
+        if in_reply_to_status_id != nil {
+            parameters.updateValue(String(in_reply_to_status_id!), forKey: "in_reply_to_status_id")
+        }
+        
+        postTweet(parameters, complete: complete)
+        
+    }
+    
+    func postTweet(parameters: NSDictionary?, complete: (tweet: Tweet?, error: NSError? )->()  ) {
+        
+        self.POST("1.1/statuses/update.json", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
+            var tweet = Tweet(dictionary: response as NSDictionary)
+            complete(tweet: tweet, error: nil)
+            
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                complete(tweet: nil, error: error)
+        })
+        
+    }
+    
+    func reTweet(status_id: Int, complete: (tweet: Tweet?, error: NSError? )->()  ) {
+        
+        self.POST("1.1/statuses/retweet/\(status_id).json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
+            var tweet = Tweet(dictionary: response as NSDictionary)
+            complete(tweet: tweet, error: nil)
+            
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                complete(tweet: nil, error: error)
+        })
+        
+    }
+    
+    func favoriteTweet(status_id: Int, complete: (tweet: Tweet?, error: NSError? )->()  ) {
+        
+        let parameters = ["id" : status_id]
+        
+        self.POST("1.1/favorites/create.json", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
+            var tweet = Tweet(dictionary: response as NSDictionary)
+            complete(tweet: tweet, error: nil)
+            
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                complete(tweet: nil, error: error)
+        })
+        
+    }
+
+    
+    
+    
     
     
 }

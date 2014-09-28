@@ -22,6 +22,16 @@ class Tweet: NSObject {
     var retweeted_status: Tweet?
     var id: Int = 0
     
+    class func tweetsFromArray(array: [NSDictionary])->[Tweet] {
+        var tweets = [Tweet]()
+        
+        for dict in array {
+            tweets.append(Tweet(dictionary: dict))
+        }
+        
+        return tweets
+    }
+    
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         text = dictionary["text"] as? String
@@ -50,6 +60,7 @@ class Tweet: NSObject {
         
     }
     
+    
     var timeIntervalAsStr: String {
         get {
             let now = NSDate()
@@ -70,15 +81,29 @@ class Tweet: NSObject {
         }
     }
     
-    class func tweetsFromArray(array: [NSDictionary])->[Tweet] {
-        var tweets = [Tweet]()
-        
-        for dict in array {
-            tweets.append(Tweet(dictionary: dict))
-        }
-        
-        return tweets
+    func reTweet()
+    {
+        self.retweeted = true
+        TwitterClient.sharedInstance.reTweet(self.id, complete: { (tweet, error) -> () in
+            if error != nil {
+                NSLog("Failed to reTweet: \(error)")
+                self.retweeted = false
+            }
+        })
     }
+    
+    func favorite()
+    {
+        self.favorited = true
+        TwitterClient.sharedInstance.favoriteTweet(self.id, complete: { (tweet, error) -> () in
+            if error != nil {
+                NSLog("Failed to favorite tweet: \(error)")
+                self.favorited = false
+            }
+        })
+        
+    }
+    
     
 
    
