@@ -107,7 +107,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     
     func loadHomeTimeline(parameters: NSDictionary?, complete: (tweets: [Tweet]?, error: NSError? )->()  ){
         
-        self.GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
+        self.GET("1.1/statuses/home_timeline.json", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
               var tweets = Tweet.tweetsFromArray(response as [NSDictionary])
               complete(tweets: tweets, error: nil)
             

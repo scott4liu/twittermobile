@@ -180,6 +180,11 @@
                                 <action selector="logout:" destination="vXZ-lx-hvc" id="ol2-Jd-ZvE"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New" id="uA3-Nh-cyd">
+                            <connections>
+                                <segue destination="Fyz-Vc-kWb" kind="show" id="fqv-sm-PWC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -235,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAx-mv-lMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="79"/>
+            <point key="canvasLocation" x="1075" y="-743"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ndo-j9-CFv">
@@ -303,4 +308,7 @@
         <image name="reply_off.png" width="16" height="16"/>
         <image name="retweet_off.png" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fqv-sm-PWC"/>
+    </inferredMetricsTieBreakers>
 </document>

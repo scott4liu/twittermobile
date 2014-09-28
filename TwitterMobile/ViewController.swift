@@ -13,22 +13,49 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var tweets: [Tweet]?
     var prototypeCell: TweetTableViewCell?
+    
+    var refreshControl: UIRefreshControl!
 
     @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Reloading Tweets ...")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tweetsTableView.addSubview(refreshControl)
+        
+        //for ios 8.0
         //tweetsTableView.rowHeight = UITableViewAutomaticDimension
+        
+        loadHomeTimeline(nil)
        
-        TwitterClient.sharedInstance.loadHomeTimeline(nil){ (tweets, error) -> () in
-            if (tweets != nil) {
-                self.tweets = tweets
-                
-                //println(tweets![0].dictionary)
+    }
+    
+    func loadHomeTimeline(parameters: NSDictionary?)
+    {
+        TwitterClient.sharedInstance.loadHomeTimeline(parameters){ (tweetArray, error) -> () in
+            if (tweetArray != nil) {
+                if parameters != nil && self.tweets != nil {
+                    for each in tweetArray! {
+                        self.tweets!.append(each)
+                    }
+                } else {
+                    self.tweets = tweetArray
+                }
                 self.tweetsTableView.reloadData()
+            } else {
+                println(error)
             }
         }
     }
+    
+    func refresh(sender:AnyObject)
+    {
+        loadHomeTimeline(nil)
+        self.refreshControl.endRefreshing()
+    }
+
 
     @IBAction func logout(sender: AnyObject) {
         
@@ -60,9 +87,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let tweet = tweets?[indexPath.row] {
             
-            println("******************")
-            println(tweet.dictionary)
-            
             if tweet.retweeted_status != nil {
                 cell.reTweetBy.text = "@" + tweet.user!.screenname!+" retweeted"
                 cell.topSpaceConstraint.constant = 18
@@ -77,10 +101,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.retweetButton.setTitle(" "+String(tweet.retweet_count ?? 0), forState: .Normal)
             
             cell.timeLabel.text = tweet.timeIntervalAsStr
+            
+            //infinite scroll
+            if (indexPath.row == (self.tweets!.count-1) ) {
+                let parameters = ["max_id": tweet.id, "count": 20]
+                loadHomeTimeline(parameters)
+            }
         }
 
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.index = indexPath.row
+        
         return cell
     }
     
