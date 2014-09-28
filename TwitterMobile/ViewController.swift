@@ -178,5 +178,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func reTweet(sender: AnyObject) {
+        let btn = sender as UIButton
+        if let cell = btn.superview?.superview?.superview as? TweetTableViewCell {
+            
+            let tweet = self.tweets![cell.index!]
+            if !tweet.retweeted {
+                tweet.reTweet()
+                showRetweetBtn(cell, tweet:tweet)
+            }
+        }
+        
+    }
 }
 
