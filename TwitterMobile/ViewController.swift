@@ -75,6 +75,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cell.favoriteButton.setTitle(" "+String(tweet.favorite_count ?? 0), forState: .Normal)
             cell.retweetButton.setTitle(" "+String(tweet.retweet_count ?? 0), forState: .Normal)
+            
+            cell.timeLabel.text = tweet.timeIntervalAsStr
         }
 
         cell.selectionStyle = UITableViewCellSelectionStyle.None
