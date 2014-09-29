@@ -61,8 +61,8 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         if countElements(str) > 0 {
             TwitterClient.sharedInstance.postTweet(str, in_reply_to_status_id: reply_to_status_id) { (tweet, error) -> () in
                 if (tweet != nil) {
-                    User.currentUser!.current_Tweet = tweet
-                    self.performSegueWithIdentifier("NewTweetToTweet", sender: self)
+                    //User.currentUser!.current_Tweet = tweet
+                    self.performSegueWithIdentifier("NewTweetToHome", sender: self)
                 } else {
                     NSLog("Failed to post tweet: \(error)")
                 }

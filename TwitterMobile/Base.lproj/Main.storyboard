@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tWF-K3-Qpg">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -565,12 +566,12 @@
                         <outlet property="replyToLabel" destination="faI-AE-pZa" id="g8t-rO-PE1"/>
                         <outlet property="screenNameLabel" destination="uzT-kq-1pR" id="yxj-yK-6ZG"/>
                         <outlet property="tweetTextView" destination="DLd-IN-HL4" id="CM2-hE-Dj2"/>
-                        <segue destination="uQt-Ps-HrV" kind="presentation" identifier="NewTweetToTweet" modalTransitionStyle="coverVertical" id="kl9-JI-aJf"/>
+                        <segue destination="DMQ-P2-5yc" kind="presentation" identifier="NewTweetToHome" id="lTo-aY-Sfj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAx-mv-lMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="-30"/>
+            <point key="canvasLocation" x="738" y="-45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ndo-j9-CFv">
@@ -639,7 +640,7 @@
         <image name="retweet_off.png" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lTo-aY-Sfj"/>
         <segue reference="VHI-TA-MLt"/>
-        <segue reference="kl9-JI-aJf"/>
     </inferredMetricsTieBreakers>
 </document>
