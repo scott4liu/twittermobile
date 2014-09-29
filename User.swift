@@ -18,6 +18,8 @@ class User: NSObject {
     var tagline: String?
     var dictionary: NSDictionary?
     
+    var current_Tweet: Tweet?
+    
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         name = dictionary["name"] as? String

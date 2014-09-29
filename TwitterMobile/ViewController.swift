@@ -178,6 +178,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func replyToTweet(sender: AnyObject) {
+        let btn = sender as UIButton
+        if let cell = btn.superview?.superview?.superview as? TweetTableViewCell {
+            let tweet = self.tweets![cell.index!]
+            
+            User.currentUser?.current_Tweet = tweet
+            
+            self.performSegueWithIdentifier("HomeToNewTweet", sender: self)
+        }
+        
+    }
+    
     @IBAction func reTweet(sender: AnyObject) {
         let btn = sender as UIButton
         if let cell = btn.superview?.superview?.superview as? TweetTableViewCell {
