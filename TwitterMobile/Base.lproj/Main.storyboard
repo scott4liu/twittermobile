@@ -408,12 +408,23 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="ewr-PY-fXW" id="dIR-dU-uy5"/>
+                        <outlet property="favoriteButton" destination="AWb-OA-GVq" id="RBh-eE-Gzl"/>
+                        <outlet property="favoriteCount" destination="Jh0-PA-8a4" id="rqV-Jc-erV"/>
+                        <outlet property="nameLabel" destination="HnN-XY-BQz" id="4fY-o2-htG"/>
+                        <outlet property="reTweetBy" destination="apG-WZ-Bfr" id="0O7-fU-NoH"/>
+                        <outlet property="reTweetCount" destination="cXB-TQ-owM" id="aX6-Ph-src"/>
+                        <outlet property="replyButton" destination="dfM-eH-u5M" id="0Ge-g9-wtE"/>
+                        <outlet property="retweetButton" destination="W5Y-Sl-xoJ" id="dNA-Pk-8zR"/>
+                        <outlet property="screenName" destination="9ff-8n-D4q" id="yjE-cr-AJ9"/>
+                        <outlet property="timeStampLabel" destination="WgY-tP-Mij" id="DU2-eS-OCh"/>
+                        <outlet property="tweetText" destination="7LB-8y-7MX" id="T3D-jB-8DE"/>
                         <segue destination="Fyz-Vc-kWb" kind="presentation" identifier="TweetDetailToReplyRetweet" id="VHI-TA-MLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56P-ax-hVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="-742"/>
+            <point key="canvasLocation" x="1693" y="-742"/>
         </scene>
         <!--New Tweet View Controller-->
         <scene sceneID="9I3-Pz-AcM">

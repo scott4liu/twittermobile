@@ -8,6 +8,10 @@
 
 import UIKit
 
+let image_favorite_on = UIImage(named: "like_on.png");
+let image_favorite_off = UIImage(named: "like_off.png");
+let image_retweet_on = UIImage(named: "retweet_on.png");
+let image_retweet_off = UIImage(named: "retweet_off.png");
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,10 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var refreshControl: UIRefreshControl!
     
-    let image_favorite_on = UIImage(named: "like_on.png");
-    let image_favorite_off = UIImage(named: "like_off.png");
-    let image_retweet_on = UIImage(named: "retweet_on.png");
-    let image_retweet_off = UIImage(named: "retweet_off.png");
 
     @IBOutlet weak var tweetsTableView: UITableView!
     override func viewDidLoad() {
@@ -116,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
 
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        //cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.index = indexPath.row
         
         return cell
