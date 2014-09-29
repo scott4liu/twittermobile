@@ -72,6 +72,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(textView: UITextView){
-        self.countLabel.text = String(countElements(textView.text))
+        self.countLabel.text = String(140-countElements(textView.text))
     }
 }
