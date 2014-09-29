@@ -108,6 +108,20 @@ class Tweet: NSObject {
         
     }
     
+    func unfavorite()
+    {
+        self.favorited = false
+        self.favorite_count--
+        TwitterClient.sharedInstance.unfavoriteTweet(self.id, complete: { (tweet, error) -> () in
+            if error != nil {
+                NSLog("Failed to unfavorite tweet: \(error)")
+                self.favorited = true
+                self.favorite_count++
+            }
+        })
+        
+    }
+    
     
 
    

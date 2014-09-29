@@ -69,7 +69,6 @@ class TweetViewController: UIViewController {
         reTweetCount.text = String(tweet.retweet_count ?? 0)
         
     }
-
     
     func dispalyTweet(tweet: Tweet){
         
@@ -94,6 +93,30 @@ class TweetViewController: UIViewController {
         
     }
 
+
+    @IBAction func favoriteAction(sender: AnyObject) {
+        if !tweet.favorited {
+            tweet.favorite()
+        } else {
+            tweet.unfavorite()
+        }
+        showFavoriteBtn()
+    }
+    
+    
+    @IBAction func reTweetAction(sender: AnyObject) {
+        if !tweet.retweeted {
+            tweet.reTweet()
+            showRetweetBtn()
+        }
+    }
+    
+    
+    @IBAction func replyAction(sender: AnyObject) {
+        reply(sender)
+    }
+    
+    
     @IBAction func reply(sender: AnyObject) {
         User.currentUser?.current_Tweet = tweet
         self.performSegueWithIdentifier("TweetDetailToReplyRetweet", sender: self)
@@ -102,15 +125,5 @@ class TweetViewController: UIViewController {
     @IBAction func back(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

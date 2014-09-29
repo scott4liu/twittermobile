@@ -37,6 +37,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.tweetsTableView.reloadData()
+    }
+    
     func loadHomeTimeline(parameters: NSDictionary?)
     {
         TwitterClient.sharedInstance.loadHomeTimeline(parameters){ (tweetArray, error) -> () in
@@ -173,8 +177,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let tweet = self.tweets![cell.index!]
             if !tweet.favorited {
                 tweet.favorite()
-                showFavoriteBtn(cell, tweet:tweet)
+            } else {
+                tweet.unfavorite()
             }
+            showFavoriteBtn(cell, tweet:tweet)
         }
     }
     

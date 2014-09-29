@@ -165,6 +165,19 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         
     }
 
+    func unfavoriteTweet(status_id: Int, complete: (tweet: Tweet?, error: NSError? )->()  ) {
+        
+        let parameters = ["id" : status_id]
+        
+        self.POST("1.1/favorites/destroy.json", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response) -> Void in
+            var tweet = Tweet(dictionary: response as NSDictionary)
+            complete(tweet: tweet, error: nil)
+            
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                complete(tweet: nil, error: error)
+        })
+        
+    }
     
     
     
