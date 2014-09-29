@@ -289,16 +289,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLd-IN-HL4">
-                                <rect key="frame" x="16" y="148" width="297" height="72"/>
+                                <rect key="frame" x="16" y="148" width="297.5" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="Tmn-ky-6qJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Fyz-Vc-kWb" id="5Ra-v6-Obh"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tce-eK-wpO">
-                                <rect key="frame" x="264" y="117" width="40" height="30"/>
+                                <rect key="frame" x="257.5" y="117" width="46.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46.5" id="jwp-Gf-zav"/>
+                                </constraints>
                                 <state key="normal" title="Tweet">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -321,6 +327,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVU-ua-14C">
+                                <rect key="frame" x="219.5" y="121" width="30" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6u8-CM-dMa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reply to: CNN " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faI-AE-pZa">
+                                <rect key="frame" x="16" y="123" width="203" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@CNN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-kq-1pR">
                                 <rect key="frame" x="77" y="92" width="36.5" height="14.5"/>
                                 <constraints>
@@ -344,14 +365,21 @@
                             <constraint firstItem="uzT-kq-1pR" firstAttribute="top" secondItem="c96-4p-S72" secondAttribute="bottom" constant="8" id="9VT-s5-glo"/>
                             <constraint firstItem="beb-L5-pJt" firstAttribute="leading" secondItem="iBK-G5-6WP" secondAttribute="leadingMargin" constant="-16" id="9Z8-Gq-5hD"/>
                             <constraint firstItem="c96-4p-S72" firstAttribute="leading" secondItem="Lyr-hG-mls" secondAttribute="trailing" constant="8" id="E2c-lc-aHA"/>
+                            <constraint firstItem="faI-AE-pZa" firstAttribute="bottom" secondItem="bVU-ua-14C" secondAttribute="bottom" constant="2" id="GCJ-HO-RSo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="beb-L5-pJt" secondAttribute="trailing" constant="-16" id="IaH-4M-KdK"/>
+                            <constraint firstItem="bVU-ua-14C" firstAttribute="leading" secondItem="faI-AE-pZa" secondAttribute="trailing" constant="1" id="Jf8-R2-1zF"/>
+                            <constraint firstItem="faI-AE-pZa" firstAttribute="top" secondItem="bVU-ua-14C" secondAttribute="top" constant="2" id="cNs-Qf-12U"/>
                             <constraint firstItem="Lyr-hG-mls" firstAttribute="top" secondItem="beb-L5-pJt" secondAttribute="bottom" constant="8" id="dSI-nr-767"/>
+                            <constraint firstItem="faI-AE-pZa" firstAttribute="leading" secondItem="Lyr-hG-mls" secondAttribute="leading" id="dje-Gu-7KX"/>
                             <constraint firstItem="Lyr-hG-mls" firstAttribute="leading" secondItem="DLd-IN-HL4" secondAttribute="leading" id="eIv-WV-bOD"/>
                             <constraint firstItem="beb-L5-pJt" firstAttribute="top" secondItem="iBK-G5-6WP" secondAttribute="topMargin" constant="-8" id="hTB-Sl-OFM"/>
                             <constraint firstItem="DLd-IN-HL4" firstAttribute="top" secondItem="Tce-eK-wpO" secondAttribute="bottom" constant="1" id="j99-ay-ELh"/>
                             <constraint firstItem="c96-4p-S72" firstAttribute="top" secondItem="Lyr-hG-mls" secondAttribute="top" constant="5" id="mKL-6r-58r"/>
+                            <constraint firstItem="bVU-ua-14C" firstAttribute="bottom" secondItem="Tce-eK-wpO" secondAttribute="bottom" id="mR7-9i-jWv"/>
+                            <constraint firstItem="bVU-ua-14C" firstAttribute="top" secondItem="Tce-eK-wpO" secondAttribute="top" constant="4" id="qtY-ZI-zkM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tce-eK-wpO" secondAttribute="trailing" id="rmT-r4-dff"/>
                             <constraint firstItem="Lyr-hG-mls" firstAttribute="leading" secondItem="iBK-G5-6WP" secondAttribute="leadingMargin" id="u3l-Y5-2y9"/>
+                            <constraint firstItem="Tce-eK-wpO" firstAttribute="leading" secondItem="bVU-ua-14C" secondAttribute="trailing" constant="8" id="zu9-FB-khm"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -359,7 +387,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatorImageView" destination="Lyr-hG-mls" id="cvp-KY-g2E"/>
+                        <outlet property="countLabel" destination="bVU-ua-14C" id="30N-8e-1uG"/>
                         <outlet property="nameLabel" destination="c96-4p-S72" id="xin-Dz-VFz"/>
+                        <outlet property="replyToLabel" destination="faI-AE-pZa" id="g8t-rO-PE1"/>
                         <outlet property="screenNameLabel" destination="uzT-kq-1pR" id="yxj-yK-6ZG"/>
                         <outlet property="tweetTextView" destination="DLd-IN-HL4" id="CM2-hE-Dj2"/>
                         <segue destination="uQt-Ps-HrV" kind="presentation" identifier="NewTweetToTweet" modalTransitionStyle="coverVertical" id="kl9-JI-aJf"/>

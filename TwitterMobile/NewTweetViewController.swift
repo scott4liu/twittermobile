@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewTweetViewController: UIViewController {
+class NewTweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var avatorImageView: UIImageView!
     
@@ -20,13 +20,21 @@ class NewTweetViewController: UIViewController {
     
     var reply_to_tweet: Tweet?
     
+    @IBOutlet weak var replyToLabel: UILabel!
     
+    @IBOutlet weak var countLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         reply_to_tweet = User.currentUser!.current_Tweet
         User.currentUser!.current_Tweet = nil
 
+        if (reply_to_tweet != nil) {
+            replyToLabel.text = "Reply to: @\(reply_to_tweet!.user!.screenname!)"
+        }
+        else {
+            replyToLabel.text = ""
+        }
         nameLabel.text = User.currentUser!.name
         screenNameLabel.text = "@" + User.currentUser!.screenname!
         
@@ -49,32 +57,21 @@ class NewTweetViewController: UIViewController {
     
     @IBAction func postTweet(sender: AnyObject) {
         let reply_to_status_id = self.reply_to_tweet?.id
-        TwitterClient.sharedInstance.postTweet(tweetTextView.text, in_reply_to_status_id: reply_to_status_id) { (tweet, error) -> () in
-            if (tweet != nil) {
-                User.currentUser!.current_Tweet = tweet
-                self.performSegueWithIdentifier("NewTweetToTweet", sender: self)
-            } else {
-                NSLog("Failed to post tweet: \(error)")
+        let str = tweetTextView.text
+        if countElements(str) > 0 {
+            TwitterClient.sharedInstance.postTweet(str, in_reply_to_status_id: reply_to_status_id) { (tweet, error) -> () in
+                if (tweet != nil) {
+                    User.currentUser!.current_Tweet = tweet
+                    self.performSegueWithIdentifier("NewTweetToTweet", sender: self)
+                } else {
+                    NSLog("Failed to post tweet: \(error)")
+                }
             }
         }
         
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textViewDidChange(textView: UITextView){
+        self.countLabel.text = String(countElements(textView.text))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
