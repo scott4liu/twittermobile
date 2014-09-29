@@ -204,7 +204,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("HomeTimelineToOneTweet", sender: self)
+        
+        if let tweet = tweets?[indexPath.row] {
+            User.currentUser?.current_Tweet = tweet
+            self.performSegueWithIdentifier("HomeTimelineToOneTweet", sender: self)
+        }
     }
 }
 

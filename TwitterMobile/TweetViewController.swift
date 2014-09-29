@@ -9,18 +9,24 @@
 import UIKit
 
 class TweetViewController: UIViewController {
+    var tweet: Tweet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tweet = User.currentUser!.current_Tweet
+        User.currentUser!.current_Tweet = nil
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func reply(sender: AnyObject) {
+        User.currentUser?.current_Tweet = tweet
+        self.performSegueWithIdentifier("TweetDetailToReplyRetweet", sender: self)
     }
     
+    @IBAction func back(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
