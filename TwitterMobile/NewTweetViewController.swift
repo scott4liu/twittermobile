@@ -30,11 +30,12 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         User.currentUser!.current_Tweet = nil
 
         if (reply_to_tweet != nil) {
-            replyToLabel.text = "Reply to: @\(reply_to_tweet!.user!.screenname!)"
+            tweetTextView.text = "@\(reply_to_tweet!.user!.screenname!)"
+            self.countLabel.text = String(140-countElements(tweetTextView.text))
         }
-        else {
-            replyToLabel.text = ""
-        }
+       
+        replyToLabel.text = ""
+        
         nameLabel.text = User.currentUser!.name
         screenNameLabel.text = "@" + User.currentUser!.screenname!
         
